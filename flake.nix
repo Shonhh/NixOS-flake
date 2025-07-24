@@ -14,10 +14,17 @@
     # use "nixos", or your hostname as the name of the configuration
     # it's a better practice than "default" shown in the video
     nixosConfigurations = {
-      vm = nixpkgs.lib.nixosSystem {
+      vm-ssd = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/vm/configuration.nix
+          ./hosts/vm-ssd/configuration.nix
+          inputs.home-manager.nixosModules.default
+        ];
+      };
+      vm-spectre = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/vm-spectre/configuration.nix
           inputs.home-manager.nixosModules.default
         ];
       };
