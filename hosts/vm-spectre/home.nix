@@ -6,6 +6,8 @@
     ../../modules/desktop/hyprland.nix
     ../../modules/development/git.nix
     ../../modules/environment/btop.nix
+    ../../modules/environment/ghostty.nix
+    ../../modules/environment/clis/fastfetch.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
