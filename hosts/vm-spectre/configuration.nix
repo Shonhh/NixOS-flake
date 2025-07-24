@@ -83,9 +83,18 @@
   # $ nix search wget
   environment.systemPackages = with pkgs; [
       neovim      
-      wget
       tree
+
+      wget
+      glxinfo
+      vulkan-tools
+      mesa-demos
   ];
+
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

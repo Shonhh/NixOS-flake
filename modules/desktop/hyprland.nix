@@ -10,12 +10,14 @@
   wayland.windowManager.hyprland.settings = {
     # Monitors
     monitor = [
-      ",highres@highrr,auto,1"
+      ",1920x1080@60,auto,1"
     ];
 
     # XWayland
-    "xwayland.force_zero_scaling" = true;
-    
+    xwayland = {
+      force_zero_scaling = true;
+    };
+
     # Programs
     "$terminal" = "ghostty";
 
@@ -53,7 +55,7 @@
       inactive_opacity = 1.0;
 
       blur = {
-        enable = true;
+        enabled = true;
 	size = 5;
 	passes = 3;
 	new_optimizations = "on";
@@ -94,7 +96,7 @@
 	"windowsIn, 1, 3.2, winIn, slide"
 	"windowsOut, 1, 2.8, easeOutCirc"
 	"windowsMove, 1, 3.0, wind, slide"
-	"fase, 1, 1.8, md3_decel"
+	"fade, 1, 1.8, md3_decel"
 	"layersIn, 1, 1.8, menu_decel, slide"
 	"layersOut, 1, 1.5, menu_accel"
 	"fadeLayersIn, 1, 1.6, menu_decel"
@@ -106,7 +108,7 @@
 
     # Window rules
     windowrulev2 = [
-      "opacity 0.80 0.80,class:^($terminal)$"
+      "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
       # ... add more later
 
       # Hyprland recommended rules
@@ -120,7 +122,7 @@
 
     workspace = [
       "10, border:false, rounding:false"
-      "special:terminal, on-created-empty:[float; size 1000 800] $terminal, persistent:false"
+      "special:terminal, on-created-empty:[float; size 960 540] $terminal, persistent:false"
     ];
 
     layerrule = "blur, logout_dialog";
@@ -197,7 +199,8 @@
       builtins.concatLists (builtins.genList (i:
           let ws = i + 1;
 	  in [
-
+	    "$mod, code:1${toString i}, workspace, ${toString ws}"
+	    "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
 	  ]
         )
 	9)
