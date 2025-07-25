@@ -4,6 +4,8 @@
 
   imports = [
     ../../modules/desktop/hyprland.nix
+    ../../modules/desktop/hyprpaper.nix
+    ../../modules/desktop/hyprpanel.nix
     ../../modules/development/git.nix
     ../../modules/environment/btop.nix
     ../../modules/environment/ghostty.nix
