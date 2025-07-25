@@ -20,6 +20,7 @@
 
     # Programs
     "$terminal" = "ghostty";
+    "$browser" = "zen";
 
     # Autostart
     exec-once = [
@@ -173,6 +174,7 @@
     bind = [
       # Applications
       "$mod, T, exec, $terminal"
+      "$mod, F, exec, $browser"
       
       # Commands
       "$mod, Q, killactive,"

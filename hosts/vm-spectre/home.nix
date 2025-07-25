@@ -8,6 +8,7 @@
     ../../modules/environment/btop.nix
     ../../modules/environment/ghostty.nix
     ../../modules/environment/clis/fastfetch.nix
+    ../../modules/applications/zen-browser.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

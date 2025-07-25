@@ -9,6 +9,9 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       inputs.home-manager.nixosModules.default
+
+      # System (custom) Imports
+      ../../modules/services/tuigreet.nix
     ];
 
   # Bootloader.
