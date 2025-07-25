@@ -33,8 +33,11 @@
 
     # Environment
     env = [
-      "XCURSOR_SIZE,19"
-      "HYPRCURSOR_SIZE,19"
+      "XCURSOR_SIZE,23"
+      "HYPRCURSOR_SIZE,23"
+
+      "XCURSOR_THEME,catppuccin-mocha-dark-cursors"
+      "HYPRCURSOR_THEME,catppuccin-mocha-dark-cursors"
     ];
 
     # General
@@ -178,6 +181,7 @@
       # Applications
       "$mod, T, exec, $terminal"
       "$mod, F, exec, $browser"
+      "Ctrl+Alt, W, exec, hyprpanel quit || hyprpanel"
       
       # Commands
       "$mod, Q, killactive,"

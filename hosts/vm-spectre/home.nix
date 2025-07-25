@@ -6,7 +6,6 @@
     ../../modules/desktop/hyprland.nix
     ../../modules/desktop/hyprpaper.nix
     ../../modules/desktop/hyprpanel.nix
-    ../../modules/desktop/fonts.nix
     ../../modules/development/git.nix
     ../../modules/environment/btop.nix
     ../../modules/environment/ghostty.nix
@@ -30,23 +29,16 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+    catppuccin-cursors.mochaDark
   ];
+
+  home.pointerCursor = {
+    package = pkgs.catppuccin-cursors.mochaDark;
+    name = "catppuccin-mocha-dark-cursors";
+    size = 23;
+    gtk.enable = true;
+    x11.enable = true;
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

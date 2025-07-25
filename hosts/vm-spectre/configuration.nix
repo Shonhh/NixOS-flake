@@ -12,6 +12,7 @@
 
       # System (custom) Imports
       ../../modules/services/tuigreet.nix
+      ../../modules/desktop/fonts.nix
     ];
 
   # Bootloader.
