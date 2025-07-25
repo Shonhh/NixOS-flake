@@ -1,7 +1,8 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   programs.hyprpanel = {
-    enabled = true
+    enable = true;
+    package = inputs.hyprpanel.packages.${pkgs.system}.default;
   };
 }

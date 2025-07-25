@@ -25,6 +25,9 @@
     # Autostart
     exec-once = [
       "$terminal"
+
+      "hyprpanel"
+      "hyprpaper"
       # ... add more later
     ];
 

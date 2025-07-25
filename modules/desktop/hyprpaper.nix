@@ -6,7 +6,7 @@
       splash = true;
 
       preload = [ "~/Images/wallpaper.png" ];
-      wallpaper = [ "~/Images/wallpaper.png" ];
+      wallpaper = [ ", ~/Images/wallpaper.png" ];
     };
   };
 }
