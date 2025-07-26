@@ -98,9 +98,12 @@
       mesa-demos
   ];
 
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
+  hardware = {
+    bluetooth.enable = true;
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
   };
 
   # Some programs need SUID wrappers, can be configured further or are

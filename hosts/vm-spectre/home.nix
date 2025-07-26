@@ -23,7 +23,6 @@
   # environment.
   home.packages = with pkgs; [
     catppuccin-cursors.mochaDark
-    neovim      
     tree
     vivaldi
   ];
