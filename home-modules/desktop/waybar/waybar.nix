@@ -5,4 +5,4 @@
   programs.waybar = {
     enable = true;
   };
-};
+}
