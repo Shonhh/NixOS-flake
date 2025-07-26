@@ -27,6 +27,8 @@
     vivaldi
   ];
 
+  stylix.targets.starship.enable = false;
+
   home.shell.enableFishIntegration = true;
 
   home.pointerCursor = {
