@@ -1,3 +1,5 @@
 { pkgs, lib, config, ... }: {
-  imports = [];
+  imports = [
+    ./waybar/waybar.nix
+  ];
 }
