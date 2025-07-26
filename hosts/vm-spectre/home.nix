@@ -5,12 +5,10 @@
   imports = [
     ../../modules/desktop/hyprland.nix
     ../../modules/desktop/hyprpaper.nix
-    ../../modules/desktop/hyprpanel.nix
     ../../modules/development/git.nix
     ../../modules/environment/btop.nix
     ../../modules/environment/ghostty.nix
     ../../modules/environment/clis/fastfetch.nix
-    ../../modules/applications/zen-browser.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
@@ -30,6 +28,9 @@
   # environment.
   home.packages = with pkgs; [
     catppuccin-cursors.mochaDark
+    neovim      
+    tree
+    vivaldi
   ];
 
   home.pointerCursor = {

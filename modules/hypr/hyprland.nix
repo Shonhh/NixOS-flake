@@ -20,7 +20,7 @@
 
     # Programs
     "$terminal" = "ghostty";
-    "$browser" = "zen";
+    "$browser" = "vivaldi";
 
     # Autostart
     exec-once = [

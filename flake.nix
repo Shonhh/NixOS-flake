@@ -11,16 +11,6 @@
 
     hyprland.url = "github:hyprwm/Hyprland";
 
-    zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprpanel = {
-      url = "github:Jas-SinghFSU/HyprPanel";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     hyprpaper.url = "github:hyprwm/hyprpaper";
   };
 
