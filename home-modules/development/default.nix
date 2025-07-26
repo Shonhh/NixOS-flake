@@ -1,7 +1,8 @@
-{ lib, config, ... }: {
+{ lib, config, pkgs, ... }: {
   imports = [
-    ./fish.nix
     ./neovim.nix
     ./git.nix
+
+    ./terminal/default.nix
   ];
 }
