@@ -43,6 +43,7 @@
           ./hosts/vm-spectre/configuration.nix
           inputs.home-manager.nixosModules.default
 	  inputs.stylix.nixosModules.stylix
+	  inputs.nvf.nixosModules.default
         ];
       };
     };
