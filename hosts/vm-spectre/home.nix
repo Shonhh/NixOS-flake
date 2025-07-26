@@ -3,12 +3,7 @@
 {
 
   imports = [
-    ../../modules/desktop/hyprland.nix
-    ../../modules/desktop/hyprpaper.nix
-    ../../modules/development/git.nix
-    ../../modules/environment/btop.nix
-    ../../modules/environment/ghostty.nix
-    ../../modules/environment/clis/fastfetch.nix
+    ../../home-modules/default.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
