@@ -80,6 +80,12 @@
     };
   };
 
+  stylix = {
+    enable = true;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
+    image = ../../home-modules/hypr/wallpaper.png;
+  };
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 

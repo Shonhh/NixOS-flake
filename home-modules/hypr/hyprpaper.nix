@@ -5,8 +5,8 @@
     settings = {
       splash = true;
 
-      preload = [ "~/Pictures/wallpaper.png" ];
-      wallpaper = [ ", ~/Pictures/wallpaper.png" ];
+      preload = [ "./wallpaper.png" ];
+      wallpaper = [ ", ./wallpaper.png" ];
     };
   };
 }
