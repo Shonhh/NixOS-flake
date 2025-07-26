@@ -67,8 +67,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shonh = {
     isNormalUser = true;
-    description = "Sean Hokanson";
-    extraGroups = [ "networkmanager" "wheel" ];
+    description = "Shonh";
+    extraGroups = [ "networkmanager" "wheel" "input" ];
     shell = pkgs.fish;
   };
 
