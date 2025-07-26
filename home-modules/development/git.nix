@@ -1,4 +1,4 @@
-{ ... }: 
+{ pkgs, ... }: 
 
 {
   programs.git = {
@@ -6,10 +6,10 @@
     userName = "Shonhh";
     userEmail = "endinja.versitile@gmail.com";
 
-    config.credential = {
-      helper = "manager";
-      "https://github.com".username = "Shonhh";
-      credentialStore = "cache";
+    extraConfig = {
+      credential.helper = "${
+        pkgs.git.override { withLibsecret = true; }
+      }/bin/git-credential-libsecret";
     };
   };
 }

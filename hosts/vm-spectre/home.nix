@@ -27,6 +27,8 @@
     vivaldi
   ];
 
+  home.shell.enableFishIntegration = true;
+
   home.pointerCursor = {
     package = pkgs.catppuccin-cursors.mochaDark;
     name = "catppuccin-mocha-dark-cursors";
