@@ -26,7 +26,6 @@
     exec-once = [
       "$terminal"
 
-      "hyprpanel"
       "hyprpaper"
       # ... add more later
     ];
@@ -46,8 +45,8 @@
       gaps_out = 8;
 
       border_size = 2;
-      "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-      "col.inactive_border" = "rgba(595959aa)";
+      # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+      # "col.inactive_border" = "rgba(595959aa)";
 
       resize_on_border = true;
 
@@ -181,7 +180,6 @@
       # Applications
       "$mod, T, exec, $terminal"
       "$mod, F, exec, $browser"
-      "Ctrl+Alt, W, exec, hyprpanel quit || hyprpanel"
       
       # Commands
       "$mod, Q, killactive,"

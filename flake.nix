@@ -12,19 +12,23 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprpaper.url = "github:hyprwm/hyprpaper";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, ... } @inputs: let
+  outputs = { self, nixpkgs, stylix, ... } @inputs: let
     system = "x86_64-linux";
   in {
-    # use "nixos", or your hostname as the name of the configuration
-    # it's a better practice than "default" shown in the video
     nixosConfigurations = {
       vm-ssd = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
           ./hosts/vm-ssd/configuration.nix
           inputs.home-manager.nixosModules.default
+	  inputs.stylix.nixosModules.stylix
         ];
       };
       vm-spectre = nixpkgs.lib.nixosSystem {
@@ -32,6 +36,7 @@
         modules = [
           ./hosts/vm-spectre/configuration.nix
           inputs.home-manager.nixosModules.default
+	  inputs.stylix.nixosModules.stylix
         ];
       };
     };

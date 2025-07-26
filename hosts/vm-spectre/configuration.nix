@@ -73,6 +73,7 @@
   };
 
   home-manager = {
+    useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
       "shonh" = import ./home.nix;
