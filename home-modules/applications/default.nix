@@ -4,5 +4,6 @@
     ./tuis/default.nix
     
     ./ghostty.nix
+    ./discord.nix
   ];
 }

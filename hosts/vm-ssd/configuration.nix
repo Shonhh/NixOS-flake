@@ -58,7 +58,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.shonh = {
     isNormalUser = true;
-    description = "Sean Hokanson";
+    description = "Shonh";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
   };
