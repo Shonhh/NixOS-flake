@@ -113,6 +113,7 @@
     # Window rules
     windowrulev2 = [
       "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
+      "opacity 0.80 0.80,class:^(discord)$"
       # ... add more later
 
       # Hyprland recommended rules
@@ -178,7 +179,9 @@
       # Applications
       "$mod, T, exec, $terminal"
       "$mod, F, exec, $browser"
-      "CTRL ALT, W, exec, waybar"
+      "$mod, D, exec, discord"
+
+      "Ctrl+Alt, W, exec, pkill waybar || waybar"
       
       # Commands
       "$mod, Q, killactive,"

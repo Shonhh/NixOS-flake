@@ -27,7 +27,10 @@
     vivaldi
   ];
 
-  stylix.targets.starship.enable = false;
+  stylix.targets = {
+    starship.enable = false;
+    nixcord.enable = false;
+  };
 
   home.shell.enableFishIntegration = true;
 
