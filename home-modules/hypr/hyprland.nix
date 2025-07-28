@@ -26,7 +26,7 @@
     exec-once = [
       "$terminal"
 
-      "waybar && hyprpaper"
+      "hyprpanel && hyprpaper"
       # ... add more later
     ];
 
@@ -181,7 +181,7 @@
       "$mod, F, exec, $browser"
       "$mod, D, exec, discord"
 
-      "Ctrl+Alt, W, exec, pkill waybar || waybar"
+      "Ctrl+Alt, W, exec, pkill hyprpanel || hyprpanel"
       
       # Commands
       "$mod, Q, killactive,"

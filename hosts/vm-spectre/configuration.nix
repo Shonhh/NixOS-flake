@@ -11,7 +11,7 @@
       inputs.home-manager.nixosModules.default
 
       # System (custom) Imports
-      ../../system-modules/default.nix
+      ../../nixos-modules/default.nix
     ];
 
   # Bootloader.

@@ -1,5 +1,5 @@
-{ pkgs, lib, config, ... }: {
+{ pkgs, inputs, lib, config, ... }: {
   imports = [
-    ./waybar/waybar.nix
+    ./hyprpanel.nix
   ];
 }
