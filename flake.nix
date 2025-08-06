@@ -29,6 +29,8 @@
     };
 
     ags.url = "github:Aylur/ags";
+
+    spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
   outputs = { self, nixpkgs, ... } @inputs: let
@@ -49,6 +51,7 @@
           ./hosts/vm-spectre/configuration.nix
           inputs.home-manager.nixosModules.default
 	  inputs.stylix.nixosModules.stylix
+	  inputs.spicetify-nix.nixosModules.spicetify
         ];
       };
     };

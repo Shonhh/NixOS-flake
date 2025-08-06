@@ -2,6 +2,7 @@
   stylix.targets = {
     starship.enable = false;
     nixcord.enable = false;
+    spicetify.enable = false;
   };
 
   stylix.cursor = {

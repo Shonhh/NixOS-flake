@@ -1,3 +1,5 @@
 { pkgs, ... }: {
-  imports = [ ./spotify.nix ];
+  imports = [
+    # ... add more later
+  ];
 }
