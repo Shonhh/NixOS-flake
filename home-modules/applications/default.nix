@@ -5,6 +5,5 @@
     
     ./ghostty.nix
     ./discord.nix
-    ./spotify.nix
   ];
 }
