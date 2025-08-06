@@ -57,7 +57,7 @@
       nixossd = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs;};
         modules = [
-          ./hosts/nixospectre/configuration.nix
+          ./hosts/nixossd/configuration.nix
           inputs.home-manager.nixosModules.default
 	  inputs.stylix.nixosModules.stylix
 	  inputs.spicetify-nix.nixosModules.spicetify
