@@ -1,8 +1,37 @@
 { inputs, pkgs, ... }: {
+  imports = [ inputs.ags.homeManagerModules.default ];
+
   programs.hyprpanel = {
     package = inputs.hyprpanel.packages.${pkgs.system}.default;
     enable = true;
   };
+
+  programs.ags = {
+    enable = true;
+
+    extraPackages = with pkgs; [
+      gtksourceview
+      webkitgtk_6_0
+      accountsservice
+    ];
+  };
+
+  home.packages = with pkgs; [
+    # Required
+    wireplumber
+    libgtop
+    bluez
+    bluez-tools
+    networkmanager
+    dart-sass
+    wl-clipboard
+    upower
+    gvfs
+    libsoup_3
+
+    # Optional
+    brightnessctl
+  ];
 
   programs.hyprpanel.settings = {
     terminal = "ghostty";

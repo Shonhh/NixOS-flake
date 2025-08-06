@@ -10,7 +10,9 @@
   wayland.windowManager.hyprland.settings = {
     # Monitors
     monitor = [
-      ",preferred@highrr,auto,auto"
+      "Virtual-1,2048x1152@60.00,auto,1"
+      "eDP-1,highres@highrr,auto,2"
+      ",highres@highrr,auto,1"
     ];
 
     # XWayland
@@ -179,6 +181,7 @@
       "$mod, T, exec, $terminal"
       "$mod, F, exec, $browser"
       "$mod, D, exec, discord"
+      "$mod, S, exec, spotify"
 
       "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
       
