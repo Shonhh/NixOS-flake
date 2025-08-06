@@ -115,6 +115,7 @@
     windowrulev2 = [
       "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
       "opacity 0.80 0.80,class:^(discord)$"
+      "opacity 0.80 0.80,class:^(Spotify)$"
       # ... add more later
 
       # Hyprland recommended rules
