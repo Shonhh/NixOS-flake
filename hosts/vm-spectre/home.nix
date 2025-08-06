@@ -27,20 +27,15 @@
     vivaldi
   ];
 
-  stylix.targets = {
-    starship.enable = false;
-    nixcord.enable = false;
-  };
-
   home.shell.enableFishIntegration = true;
 
-  home.pointerCursor = {
-    package = pkgs.catppuccin-cursors.mochaDark;
-    name = "catppuccin-mocha-dark-cursors";
-    size = 23;
-    gtk.enable = true;
-    x11.enable = true;
-  };
+#  home.pointerCursor = {
+#    package = pkgs.catppuccin-cursors.mochaDark;
+#    name = "catppuccin-mocha-dark-cursors";
+#    size = 23;
+#    gtk.enable = true;
+#    x11.enable = true;
+#  };
   
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.

@@ -10,7 +10,7 @@
   wayland.windowManager.hyprland.settings = {
     # Monitors
     monitor = [
-      ",1920x1080@60,auto,1"
+      ",preferred@highrr,auto,auto"
     ];
 
     # XWayland
@@ -26,7 +26,6 @@
     exec-once = [
       "$terminal"
 
-      "hyprpanel && hyprpaper"
       # ... add more later
     ];
 
@@ -181,7 +180,7 @@
       "$mod, F, exec, $browser"
       "$mod, D, exec, discord"
 
-      "Ctrl+Alt, W, exec, pkill hyprpanel || hyprpanel"
+      "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
       
       # Commands
       "$mod, Q, killactive,"

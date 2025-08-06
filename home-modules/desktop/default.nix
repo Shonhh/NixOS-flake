@@ -1,3 +1,5 @@
 { pkgs, inputs, lib, config, ... }: {
-  imports = [];
+  imports = [ 
+    ./stylix.nix 
+  ];
 }
