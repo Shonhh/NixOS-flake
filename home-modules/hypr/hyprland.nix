@@ -189,6 +189,7 @@
       "$mod, G, exec, steam"
 
       "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
+      "$mod+Alt, G, exec, ~/nixos/scripts/gamemode.sh"
       
       # Commands
       "$mod, Q, killactive,"
