@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }: {
+{ inputs, pkgs, lib, config, ... }: {
   imports = [ inputs.ags.homeManagerModules.default ];
 
   programs.hyprpanel = {
@@ -33,85 +33,87 @@
     brightnessctl
   ];
 
-  programs.hyprpanel.settings = {
-    terminal = "ghostty";
-    scalingPriority = "hyprland";
-    wallpaper.enable = false;
+  config = {
+    programs.hyprpanel.settings = {
+      terminal = "ghostty";
+      scalingPriority = "hyprland";
+      wallpaper.enable = false;
+  
+      theme = {
+        matugen = false;
+  
+        font = {
+          size = "11px";
+  	name = "Hack Nerd Font Mono Regular";
+  	label = "Hack Nerd Font Mono Regular";
+        };
+  
+        bar = {
+          enableShadow = false;
+	  floating = false;
+	  outer_spacing = "8px";
 
-    theme = {
-      matugen = false;
-
-      font = {
-        size = "11px";
-	name = "Hack Nerd Font";
-	label = "Hack Nerd Font";
+  	  menus.monochrome = false;
+  
+  	  buttons = {
+            borderSize = "0.1em";
+  	    enableBorders = false;
+  	    monochrome = false;
+  	    y_margins = "0.4em";
+  
+  	    dashboard.enableBorder = false;
+  	  };
+        };
       };
 
       bar = {
-        enableShadow = false;
-	floating = false;
-	outer_spacing = "8px";
+        customModules.storage.paths = [
+  	  "/"
+        ];
 
-	menus.monochrome = false;
+        launcher.autoDetectIcon = true;
+        autoHide = "fullscreen";
 
-	buttons = {
-          borderSize = "0.1em";
-	  enableBorders = false;
-	  monochrome = false;
-	  y_margins = "0.4em";
+        layouts = {
+	  "*" = {
+	    "left" = [ "dashboard" "workspaces" "systray" "media" ];
+	    "middle" = [ "windowtitle" ];
+	    "right" = [ "volume" "network" "bluetooth" "battery" "clock" "notifications" ];
+	  };
+        };
 
-	  dashboard.enableBorder = false;
-	};
-      };
-    };
-
-    bar = {
-      customModules.storage.paths = [
-  	"/"
-      ];
-
-      launcher.autoDetectIcon = true;
-      autoHide = "fullscreen";
-
-      layouts = {
-	"*" = {
-	  "left" = [ "dashboard" "workspaces" "systray" "media" ];
-	  "middle" = [ "windowtitle" ];
-	  "right" = [ "volume" "network" "bluetooth" "battery" "clock" "notifications" ];
-	};
+        workspaces = {
+	  show_numbered = false;
+	  show_icons = false;
+	  showWsIcons = false;
+	  showApplicationIcons = false;
+	  numbered_active_indicator = "underline";
+	  workspaceMask = false;
+        };
       };
 
-      workspaces = {
-	show_numbered = false;
-	show_icons = false;
-	showWsIcons = false;
-	showApplicationIcons = false;
-	numbered_active_indicator = "underline";
-	workspaceMask = false;
+      menus = {
+        clock = {
+          time.hideSeconds = true;
+	  weather.location = "Austin";
+        };
+
+        dashboard = {
+	  powermenu.avatar.name = "Shonh";
+	  controls.enabled = true;
+	  stats.enabled = false;
+	  shortcuts.enabled = false;
+	  directories.enabled = false;
+        };
+
+        transition = "crossfade";
+        transitionTime = 150;
+
+        media.displayTime = false;
+        media.displayTimeTooltip = true;
+
+        power.showLabel = true;
       };
-    };
-
-    menus = {
-      clock = {
-        time.hideSeconds = true;
-	weather.location = "Austin";
-      };
-
-      dashboard = {
-	powermenu.avatar.name = "Shonh";
-	controls.enabled = false;
-	stats.enabled = false;
-	shortcuts.enabled = false;
-	directories.enabled = false;
-      };
-
-      transition = "crossfade";
-      transitionTime = 150;
-
-      media.displayTime = false;
-      media.displayTimeTooltip = true;
-
-      power.showLabel = true;
     };
   };
 }

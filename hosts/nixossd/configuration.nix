@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -57,9 +57,13 @@
   };
 
   # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services.xserver = {
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    videoDrivers = ["nvidia"];
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -88,6 +92,16 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+    };
+
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+      open = false;
+      nvidiaSettings = true;
+
+      package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
   };
 
