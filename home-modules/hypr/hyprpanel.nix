@@ -1,4 +1,4 @@
-{ inputs, pkgs, lib, config, ... }: {
+{ inputs, pkgs, ... }: {
   imports = [ inputs.ags.homeManagerModules.default ];
 
   programs.hyprpanel = {
@@ -33,7 +33,6 @@
     brightnessctl
   ];
 
-  config = {
     programs.hyprpanel.settings = {
       terminal = "ghostty";
       scalingPriority = "hyprland";
@@ -115,5 +114,4 @@
         power.showLabel = true;
       };
     };
-  };
 }
