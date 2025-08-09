@@ -186,6 +186,7 @@
       "$mod, F, exec, $browser"
       "$mod, D, exec, discord"
       "$mod, S, exec, spotify"
+      "$mod, G, exec, steam"
 
       "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
       
