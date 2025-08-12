@@ -28,9 +28,6 @@
     upower
     gvfs
     libsoup_3
-
-    # Optional
-    brightnessctl
   ];
 
     programs.hyprpanel.settings = {

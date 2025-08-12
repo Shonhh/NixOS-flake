@@ -31,4 +31,13 @@
       name = "Noto Color Emoji";
     };
   };
+
+  gtk = {
+    enable = true;
+
+    iconTheme = {
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
+    };
+  };
 }
