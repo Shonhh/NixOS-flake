@@ -12,7 +12,7 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
     };
-    
+
     stylix = {
       url = "github:danth/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,36 +33,39 @@
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
   };
 
-  outputs = { self, nixpkgs, ... } @inputs: let
-    system = "x86_64-linux";
-  in {
-    nixosConfigurations = {
-      vm-ssd = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/vm-ssd/configuration.nix
-          inputs.home-manager.nixosModules.default
-	  inputs.stylix.nixosModules.stylix
-        ];
-      };
-      vm-spectre = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/vm-spectre/configuration.nix
-          inputs.home-manager.nixosModules.default
-	  inputs.stylix.nixosModules.stylix
-	  inputs.spicetify-nix.nixosModules.spicetify
-        ];
-      };
-      nixossd = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/nixossd/configuration.nix
-          inputs.home-manager.nixosModules.default
-	  inputs.stylix.nixosModules.stylix
-	  inputs.spicetify-nix.nixosModules.spicetify
-        ];
+  outputs =
+    { self, nixpkgs, ... }@inputs:
+    let
+      system = "x86_64-linux";
+    in
+    {
+      nixosConfigurations = {
+        vm-ssd = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/vm-ssd/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+          ];
+        };
+        vm-spectre = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/vm-spectre/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.spicetify-nix.nixosModules.spicetify
+          ];
+        };
+        nixossd = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nixossd/configuration.nix
+            inputs.home-manager.nixosModules.default
+            inputs.stylix.nixosModules.stylix
+            inputs.spicetify-nix.nixosModules.spicetify
+          ];
+        };
       };
     };
-  };
 }

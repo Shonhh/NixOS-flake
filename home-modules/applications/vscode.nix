@@ -1,11 +1,27 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.vscode = {
     enable = true;
 
-    defaultEditor = true;
+    profiles.default = {
+      extensions = with pkgs.vscode-extensions; [
+        jnoortheen.nix-ide
+        catppuccin.catppuccin-vsc
+      ];
 
-    extensions = with pkgs.vscode-extensions; [
-      # ... add more later
-    ];
+      userSettings = {
+        "nix.serverPath" = "nixd";
+        "nix.enableLanguageServer" = true;
+        "nix.serverSettings" = {
+          "nixd" = {
+            "formatting" = {
+              "command" = [ "nixfmt" ];
+            };
+          };
+        };
+
+        "workbench.colorTheme" = "Catppuccin Mocha";
+      };
+    };
   };
 }
