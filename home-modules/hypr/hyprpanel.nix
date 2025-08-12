@@ -52,7 +52,10 @@
 	  floating = false;
 	  outer_spacing = "8px";
 
-  	  menus.monochrome = false;
+  	  menus = {
+	    monochrome = false;
+            popover.scaling = 55;
+	  };
   
   	  buttons = {
             borderSize = "0.1em";
