@@ -72,7 +72,7 @@
   users.users.shonh = {
     isNormalUser = true;
     description = "Shonh";
-    extraGroups = [ "networkmanager" "wheel" "input" ];
+    extraGroups = [ "networkmanager" "wheel" "input" "video" "audio" ];
     shell = pkgs.fish;
   };
 
