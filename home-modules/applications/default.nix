@@ -5,5 +5,6 @@
     
     ./ghostty.nix
     ./discord.nix
+    ./vscode.nix
   ];
 }
