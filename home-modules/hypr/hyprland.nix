@@ -23,6 +23,8 @@
     # Programs
     "$terminal" = "ghostty";
     "$browser" = "vivaldi";
+    "$file_manager" = "thunar";
+    "$code_editor" = "code .";
 
     # Autostart
     exec-once = [
@@ -119,6 +121,10 @@
       "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
       "opacity 0.80 0.80,class:^(discord)$"
       "opacity 0.80 0.80,class:^(Spotify)$"
+      "opacity 0.75 0.75,class:^(thunar)$"
+      "opacity 0.92 0.92,class:^(steam)$"
+      "opacity 0.92 0.92,class:^(obsidian)$"
+
       # ... add more later
 
       # Hyprland recommended rules
@@ -187,6 +193,8 @@
       "$mod, D, exec, discord"
       "$mod, S, exec, spotify"
       "$mod, G, exec, steam"
+      "$mod, E, exec, $file_manager"
+      "$mod, C, exec, $code_editor"
 
       "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
       "$mod+Alt, G, exec, ~/nixos/scripts/gamemode.sh"

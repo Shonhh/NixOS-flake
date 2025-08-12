@@ -114,6 +114,7 @@
      wget
      git
      brightnessctl
+     nixfmt-rfc-style
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
