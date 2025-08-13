@@ -24,7 +24,10 @@
           };
         };
 
-        workbench.colorTheme = "Catppuccin Mocha";
+        workbench = {
+          colorTheme = "Catppuccin Mocha";
+          sideBar.location = "right";
+        };
 
         editor.semanticHighlighting.enabled = true;
         terminal.integrated.minimumContrastRatio = 1;
