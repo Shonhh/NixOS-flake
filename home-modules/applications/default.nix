@@ -1,4 +1,4 @@
-{ lib, config, ... }: {
+{ lib, config, inputs, ... }: {
   imports = [
     ./clis/default.nix
     ./tuis/default.nix

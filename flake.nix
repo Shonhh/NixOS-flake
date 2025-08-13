@@ -66,6 +66,7 @@
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.spicetify-nix.nixosModules.spicetify
+            inputs.catppuccin.nixosModules.catppuccin
           ];
         };
       };

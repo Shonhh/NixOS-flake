@@ -96,7 +96,10 @@
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "shonh" = import ./home.nix;
+      "shonh".imports = [ 
+        ./home.nix
+        inputs.catppuccin.homeModules.catppuccin
+      ];
     };
   };
 

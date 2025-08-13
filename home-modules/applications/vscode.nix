@@ -1,5 +1,11 @@
 { pkgs, ... }:
 {
+
+  catppuccin = {
+    vscode.accent = "blue";
+    vscode.settings.bracketMode = "dimmed";
+  };
+
   programs.vscode = {
     enable = true;
 
@@ -25,12 +31,6 @@
         };
 
         workbench.colorTheme = "Catppuccin Mocha";
-
-        catppuccin = {
-          enable = true;
-          accentColor = "blue";
-          bracketMode = "dimmed";
-        };
 
         editor.semanticHighlighting.enabled = true;
         terminal.integrated.minimumContrastRatio = 1;
