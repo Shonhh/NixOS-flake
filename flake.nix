@@ -31,6 +31,8 @@
     ags.url = "github:Aylur/ags";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
