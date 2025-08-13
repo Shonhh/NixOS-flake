@@ -1,11 +1,5 @@
 { pkgs, ... }:
 {
-
-  catppuccin = {
-    vscode.accent = "blue";
-    vscode.settings.bracketMode = "dimmed";
-  };
-
   programs.vscode = {
     enable = true;
 
