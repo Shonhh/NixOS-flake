@@ -4,6 +4,7 @@
     starship.enable = false;
     nixcord.enable = false;
     vscode.enable = false;
+    hyprlock.enable = false;
   };
 
   stylix.cursor = {

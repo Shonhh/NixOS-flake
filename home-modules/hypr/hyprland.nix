@@ -42,6 +42,8 @@
       exec-once = [
         "$terminal"
 
+        "hypridle"
+        "systemctl --user start hyprpolkitagent"
         # ... add more later
       ];
 

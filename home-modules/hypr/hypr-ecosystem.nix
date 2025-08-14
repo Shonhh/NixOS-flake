@@ -1,11 +1,11 @@
 { config, ... }:
 let
-  accentColor = config.stylix.colors.base0d;
-  baseColor = config.stylix.colors.base00;
-  textColor = config.stylix.colors.base05;
-  red = config.stylix.colors.base08;
-  yellow = config.stylix.colors.base0A;
-  surface0 = config.stylix.colors.base02;
+  accentColor = config.lib.stylix.colors.withHashtag.base0D;
+  baseColor = config.lib.stylix.colors.withHashtag.base00;
+  textColor = config.lib.stylix.colors.withHashtag.base05;
+  red = config.lib.stylix.colors.withHashtag.base08;
+  yellow = config.lib.stylix.colors.withHashtag.base0A;
+  surface0 = config.lib.stylix.colors.withHashtag.base02;
   font = "Hack Nerd Font Mono";
 in
 {
@@ -62,7 +62,7 @@ in
         # BACKGROUND
         background = {
           monitor = "";
-          path = "./wallpaper.png";
+          path = "~/nixos/home-modules/hypr/wallpaper.png";
           blur_passes = 0;
           color = baseColor;
         };
@@ -82,7 +82,7 @@ in
           # DATE
           {
             monitor = "";
-            text = "cmd[update:43200000] date +\"%A, %d %B %Y\"";
+            text = "cmd[update:43200000] date +'%A, %d %B %Y'";
             color = textColor;
             font_size = 25;
             font_family = font;
@@ -112,7 +112,7 @@ in
           capslock_color = yellow;
           position = "0, -47";
           halign = "center";
-          valign = "top";
+          valign = "center";
         };
       };
     };
