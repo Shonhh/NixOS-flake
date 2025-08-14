@@ -213,6 +213,7 @@
 
         # Commands
         "$mod, Q, killactive,"
+        "$mod, L, exec, hyprlock"
         "$mod, Delete, exit,"
         "$mod, W, togglefloating,"
         "$mod, J, togglesplit," # dwindle

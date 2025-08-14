@@ -26,6 +26,7 @@
 
         workbench = {
           colorTheme = "Catppuccin Mocha";
+          iconTheme = "catppuccin-mocha";
           sideBar.location = "right";
         };
 
