@@ -31,9 +31,25 @@
 
   systemd.tpm2.enable = false;
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # Systemd
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
+  # Grub
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      devices = [ "nodev" ];
+      enable = true;
+      efiSupport = true;
+      version = 2;
+      useOSProber = true;
+    };
+  };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -136,6 +152,7 @@
     brightnessctl
     nixfmt-rfc-style
     nixd
+    networkmanagerapplet
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
