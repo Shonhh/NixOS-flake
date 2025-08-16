@@ -92,7 +92,7 @@
           # TIME
           {
             monitor = "";
-            text = "cmd[update:1000] echo '$(date + '%-I:%M')'";
+            text = "cmd[update:1000] date '+ %-I:%M'";
             color = "rgba(242, 243, 244, 0.9)";
             font_size = 76;
             font_family = "JetBrains Mono Extrabold";
@@ -103,7 +103,7 @@
           # DATE
           {
             monitor = "";
-            text = "cmd[update:1000] echo '$(date + '%A, %B %d')'";
+            text = "cmd[update:1000] date '+ %A, %B %d'";
             color = "rgba(242, 243, 244, 0.9)";
             font_size = 18;
             font_family = "JetBrains Mono";
