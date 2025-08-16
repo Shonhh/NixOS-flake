@@ -25,6 +25,7 @@
       ];
 
       userSettings = {
+        # Nix
         nix.serverPath = "nixd";
         nix.enableLanguageServer = true;
         nix.serverSettings = {
@@ -49,6 +50,11 @@
 
         gopls = {
           ui.semanticTokens = true;
+        };
+
+        github.copilot.nextEditSuggestions = {
+          enabled = false;
+          fixes = false;
         };
       };
     };

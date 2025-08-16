@@ -90,13 +90,16 @@
     shell = pkgs.fish;
   };
 
-  programs.fish.enable = true;
+  programs = {
+    fish.enable = true;
+    nix-ld.enable = true;
+  };
 
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "shonh".imports = [ 
+      "shonh".imports = [
         ./home.nix
         inputs.catppuccin.homeModules.catppuccin
       ];

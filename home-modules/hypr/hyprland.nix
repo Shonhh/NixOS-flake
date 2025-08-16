@@ -211,6 +211,9 @@
         "$mod, C, exec, $code_editor"
 
         "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
+        "$mod, P, exec, grimblast copy area $temp_screenshot"
+        "$mod+Shift, P, exec, grimblast copysave area $temp_screenshot"
+        "$mod, A, exec, pkill -x rofi || rofi -show drun"
         "$mod+Alt, G, exec, ~/nixos/scripts/gamemode.sh"
 
         # Commands
