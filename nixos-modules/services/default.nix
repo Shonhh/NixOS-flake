@@ -2,5 +2,6 @@
   imports = [
     ./tuigreet.nix
     ./stylix.nix
+    ./hypr-environment.nix
   ];
 }
