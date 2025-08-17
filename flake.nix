@@ -39,6 +39,7 @@
     { self, nixpkgs, ... }@inputs:
     let
       system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     {
       nixosConfigurations = {
@@ -69,6 +70,19 @@
             inputs.catppuccin.nixosModules.catppuccin
           ];
         };
+      };
+
+      devShells.${system}.default = pkgs.mkShell {
+        packages = with pkgs; [
+          jdk
+          # ... add more later.
+        ];
+        shellHook = ''
+          echo "Entering multi-language development environment!"
+        '';
+
+        _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
+        JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
       };
     };
 }
