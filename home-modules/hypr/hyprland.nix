@@ -208,7 +208,8 @@
         "$mod, S, exec, spotify"
         "$mod, G, exec, steam"
         "$mod, E, exec, $file_manager"
-        "$mod, C, exec, $code_editor"
+        "$mod, C, exec, nix develop ~/nixos/ && $code_editor"
+        "$mod, N, exec, obsidian"
 
         "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
         "$mod, P, exec, grimblast copy area $temp_screenshot"

@@ -52,7 +52,12 @@
   };
 
   # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_latest;
+    kernelParams = [
+      "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+    ];
+  };
 
   networking.hostName = "Nixon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -138,6 +143,7 @@
       powerManagement.finegrained = false;
       open = false;
       nvidiaSettings = true;
+      
 
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
