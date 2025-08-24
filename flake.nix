@@ -70,16 +70,16 @@
             inputs.catppuccin.nixosModules.catppuccin
           ];
         };
-	nixospectre = nixpkgs.lib.nixosSystem {
-	  specialArgs = { inherit inputs; };
-	  modules = [
-            ./hosts/nixossd/configuration.nix
+        nixospectre = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/nixospectre/configuration.nix
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.spicetify-nix.nixosModules.spicetify
             inputs.catppuccin.nixosModules.catppuccin
           ];
-	};
+        };
       };
 
       devShells.${system}.default = pkgs.mkShell {

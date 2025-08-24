@@ -26,10 +26,10 @@
     networkmanager
     dart-sass
     wl-clipboard
-    upower
     gvfs
     libsoup_3
   ];
+  services.upower.enable = true;
 
   programs.hyprpanel.settings = {
     terminal = "ghostty";
