@@ -33,6 +33,7 @@
   ];
 
   home.shell.enableFishIntegration = true;
+  eDP-1.enable = true;
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
