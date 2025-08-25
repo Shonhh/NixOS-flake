@@ -7,6 +7,5 @@
     ./discord.nix
     ./vscode.nix
     ./obsidian.nix
-    ./thunderbird.nix
   ];
 }

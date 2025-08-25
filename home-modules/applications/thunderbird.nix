@@ -1,5 +1,0 @@
-{ ... }: {
-  programs.betterbird = {
-    enable = true;
-  };
-}
