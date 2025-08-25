@@ -91,7 +91,6 @@
           echo "Entering multi-language development environment!"
         '';
 
-        _JAVA_OPTIONS = "-Dawt.useSystemAAFontSettings=lcd";
         JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
       };
     };
