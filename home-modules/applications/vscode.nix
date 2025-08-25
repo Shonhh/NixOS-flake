@@ -9,7 +9,10 @@
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
         usernamehw.errorlens
-        
+
+        # Control Scheme
+        vscodevim.vim
+
         # Nix
         jnoortheen.nix-ide
 
@@ -36,12 +39,22 @@
           };
         };
 
+        vim = {
+          leader = "<space>";
+          easymotion = true;
+          incsearch = true;
+          useSystemClipboard = true;
+        };
+        # To improve performance
+        extensions.experimental.affinity = {
+          "vscodevim.vim" = 1;
+        };
+
         workbench = {
           colorTheme = "Catppuccin Mocha";
           sideBar.location = "right";
+          iconTheme = "catppuccin-mocha";
         };
-
-        workbench.iconTheme = "catppuccin-mocha";
 
         editor.semanticHighlighting.enabled = true;
         terminal.integrated.minimumContrastRatio = 1;
