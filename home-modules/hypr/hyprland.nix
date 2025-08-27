@@ -219,6 +219,7 @@
         "$mod+Shift, P, exec, grimblast copysave area $temp_screenshot"
         "$mod, A, exec, pkill -x rofi || rofi -show drun"
         "$mod+Alt, G, exec, ~/nixos/scripts/gamemode.sh"
+        "$Ctrl+Shift, R, exec, ~/nixos/scripts/rotate-eDP1.sh"
 
         # Commands
         "$mod, Q, killactive,"
