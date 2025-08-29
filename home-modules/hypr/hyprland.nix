@@ -189,10 +189,6 @@
         };
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
-
       device = [
         {
           # ... add later

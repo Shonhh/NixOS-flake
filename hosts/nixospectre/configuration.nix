@@ -121,6 +121,8 @@
     nixfmt-rfc-style
     nixd
     networkmanagerapplet
+    unzip
+    efibootmgr
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
