@@ -7,9 +7,11 @@
   programs.nixcord = {
     enable = true;
 
-    quickCss = ./discord.css;
+    quickCss = builtins.readFile ./discord.css;
 
     config = {
+      useQuickCss = true;
+
       plugins = {
         anonymiseFileNames.enable = true;
         betterGifAltText.enable = true;

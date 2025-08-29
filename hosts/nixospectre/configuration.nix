@@ -25,9 +25,24 @@
     trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
   };
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # `systemd` Bootloader.
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
+
+  # `GRUB` Bootloader.
+  boot.loader = {
+    systemd-boot.enable = false;
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
+    grub = {
+      devices = [ "nodev" ];
+      enable = true;
+      efiSupport = true;
+      useOSProber = true;
+    };
+  };
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -122,7 +137,6 @@
     nixd
     networkmanagerapplet
     unzip
-    efibootmgr
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
