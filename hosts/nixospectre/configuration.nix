@@ -3,16 +3,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
 
-      ../../nixos-modules/default.nix
-    ];
+    ../../nixos-modules/default.nix
+  ];
 
   nix.settings = {
     experimental-features = [
@@ -34,7 +39,7 @@
     systemd-boot.enable = false;
     efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efiSysMountPoint = "/boot";
     };
     grub = {
       devices = [ "nodev" ];
@@ -92,9 +97,15 @@
   users.users.shonh = {
     isNormalUser = true;
     description = "Shonh";
-    extraGroups = [ "networkmanager" "wheel" "input" "video" "audio" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "input"
+      "video"
+      "audio"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
     shell = pkgs.fish;
   };
@@ -129,7 +140,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim    
+    neovim
     wget
     git
     brightnessctl
