@@ -148,6 +148,7 @@
     nixd
     networkmanagerapplet
     unzip
+    wineWowPackages.stable
   ];
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
