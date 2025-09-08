@@ -103,6 +103,7 @@
       "input"
       "video"
       "audio"
+      "plugdev"
     ];
     packages = with pkgs; [
       #  thunderbird

@@ -5,6 +5,7 @@
     ./thunar.nix
     ./thunderbird.nix
     ./obsidian.nix
+    ./dolphin-emu.nix
     # ... add more later
   ];
 }
