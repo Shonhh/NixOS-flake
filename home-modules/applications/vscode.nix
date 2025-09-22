@@ -10,6 +10,9 @@
         catppuccin.catppuccin-vsc-icons
         usernamehw.errorlens
 
+        # Formatting
+        esbenp.prettier-vscode
+
         # Control Scheme
         vscodevim.vim
 
@@ -39,12 +42,18 @@
           };
         };
 
+        # Java
+        "[java]" = {
+          editor.defaultFormatter = "redhat.java";
+        };
+
         vim = {
           leader = "<space>";
           easymotion = true;
           incsearch = true;
           useSystemClipboard = true;
         };
+
         # To improve performance
         extensions.experimental.affinity = {
           "vscodevim.vim" = 1;
@@ -56,7 +65,13 @@
           iconTheme = "catppuccin-mocha";
         };
 
-        editor.semanticHighlighting.enabled = true;
+        editor = {
+          defaultFormatter = "esbenp.prettier-vscode";
+          semanticHighlighting.enabled = true;
+          detectIndentation = false;
+          tabSize = 4;
+        };
+
         terminal.integrated.minimumContrastRatio = 1;
         window.titleBarStyle = "custom";
         git.openRepositoryInParentFolders = "always";

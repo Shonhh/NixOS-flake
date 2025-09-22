@@ -85,6 +85,8 @@
     tlp.enable = true;
     # Enable CUPS for printing
     printing.enable = true;
+    # Enable auto-mounting of removable media
+    gvfs.enable = true;
 
     # Configure keymap in X11
     xserver.xkb = {
@@ -105,9 +107,11 @@
       "audio"
       "plugdev"
     ];
+
     packages = with pkgs; [
-      #  thunderbird
+      prismlauncher
     ];
+
     shell = pkgs.fish;
   };
 
