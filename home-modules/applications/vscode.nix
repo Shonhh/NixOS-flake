@@ -10,9 +10,6 @@
         catppuccin.catppuccin-vsc-icons
         usernamehw.errorlens
 
-        # Formatting
-        esbenp.prettier-vscode
-
         # Control Scheme
         vscodevim.vim
 
@@ -66,7 +63,6 @@
         };
 
         editor = {
-          defaultFormatter = "esbenp.prettier-vscode";
           semanticHighlighting.enabled = true;
           detectIndentation = false;
           tabSize = 4;

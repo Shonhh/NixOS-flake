@@ -47,7 +47,7 @@
     # ".gradle/gradle.properties".text = ''
     #   org.gradle.console=verbose
     #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    # ''
   };
 
   # Home Manager can also manage your environment variables through
@@ -67,6 +67,7 @@
   #  /etc/profiles/per-user/shonh/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
+    NIXOS_OZONE_WL = "1";
     # EDITOR = "emacs";
   };
 

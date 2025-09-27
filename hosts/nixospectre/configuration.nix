@@ -97,8 +97,6 @@
     printing.enable = true;
     # Enable auto-mounting of removable media
     gvfs.enable = true;
-    # Enable flatpak
-    flatpak.enable = true;
 
     # Configure keymap in X11
     xserver.xkb = {

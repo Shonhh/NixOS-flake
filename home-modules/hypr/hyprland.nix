@@ -180,7 +180,9 @@
 
         follow_mouse = 1;
         sensitivity = 0.30;
+        scroll_factor = 0.5;
         accel_profile = "flat";
+        emulate_discrete_scroll = 0;
 
         touchpad = {
           natural_scroll = true;
