@@ -2,6 +2,7 @@
 {
   programs.vscode = {
     enable = true;
+    package = (pkgs.wrapWithWaylandFlags pkgs.vscode);
 
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [

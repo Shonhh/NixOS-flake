@@ -78,6 +78,12 @@
             inputs.stylix.nixosModules.stylix
             inputs.spicetify-nix.nixosModules.spicetify
             inputs.catppuccin.nixosModules.catppuccin
+
+            {
+              nixpkgs.overlays = [
+                (import ./overlays/wayland-wrapper.nix)
+              ];
+            }
           ];
         };
       };

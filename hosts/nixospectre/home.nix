@@ -68,7 +68,7 @@
   #
   home.sessionVariables = {
     NIXOS_OZONE_WL = "1";
-    # EDITOR = "emacs";
+    ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 
   # Let Home Manager install and manage itself.
