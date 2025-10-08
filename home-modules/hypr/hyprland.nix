@@ -139,7 +139,7 @@
         "opacity 0.75 0.75,class:^(thunar)$"
         "opacity 0.92 0.92,class:^(steam)$"
         "opacity 0.92 0.92,class:^(obsidian)$"
-        "opacity 0.92 0.92,class:^(Code)$"
+        "opacity 0.92 0.92,class:^([Cc]ode)$"
         # ... add more later
 
         # Hyprland recommended rules
