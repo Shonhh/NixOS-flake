@@ -89,14 +89,22 @@
       };
 
       devShells.${system}.default = pkgs.mkShell {
+        buildInputs = with pkgs; [
+          cargo rustc rustfmt clippy rust-analyzer
+        ];
+
         packages = with pkgs; [
           jdk
           # ... add more later.
         ];
+
         shellHook = ''
           echo "Entering multi-language development environment!"
         '';
 
+        nativeBuildInputs = [ pkgs.pkg-config ];
+
+        env.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
         JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
       };
     };

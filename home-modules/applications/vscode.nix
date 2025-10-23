@@ -23,6 +23,13 @@
         vscjava.vscode-java-debug
         vscjava.vscode-java-test
 
+        # Rust
+        fill-labs.dependi
+        rust-lang.rust-analyzer
+
+        # TOML
+        tamasfe.even-better-toml
+
         # Git
         github.vscode-pull-request-github
         eamodio.gitlens
@@ -67,6 +74,7 @@
           semanticHighlighting.enabled = true;
           detectIndentation = false;
           tabSize = 4;
+          wordWrapColumn = 100;
         };
 
         terminal.integrated.minimumContrastRatio = 1;
