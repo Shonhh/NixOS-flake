@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   environment.systemPackages = with pkgs; [
     wget
-    glxinfo
+    mesa-demos
     vulkan-tools
     mesa-demos
   ];

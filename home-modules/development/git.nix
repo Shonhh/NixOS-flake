@@ -3,7 +3,10 @@
 {
   programs.git = {
     enable = true;
-    userName = "Shonhh";
-    userEmail = "endinja.versitile@gmail.com";
+
+    settings.user = {
+      name = "Shonhh";
+      email = "endinja.versitile@gmail.com";
+    };
   };
 }
