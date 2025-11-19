@@ -211,7 +211,7 @@
         "$mod, C, exec, nix develop ~/nixos/ --command $code_editor"
         "$mod, N, exec, obsidian"
         "$mod, M, exec, $mail"
-        
+
         "$mod, $mod, exec, hyprpanel t dashboardmenu"
         "Ctrl+Alt, W, exec, hyprpanel -q || hyprpanel"
         "$mod, P, exec, grimblast copy area $temp_screenshot"
@@ -225,6 +225,7 @@
         "$mod, L, exec, hyprlock"
         "$mod, Delete, exit,"
         "$mod, W, togglefloating,"
+        "$mod+SHIFT, F, fullscreen"
         "$mod, J, togglesplit," # dwindle
 
         # Move focus with mainMod + arrow keys
