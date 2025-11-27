@@ -7,8 +7,8 @@
     profiles.default = {
       extensions = with pkgs.vscode-extensions; [
         # Theming
-        catppuccin.catppuccin-vsc
-        catppuccin.catppuccin-vsc-icons
+        jdinhlife.gruvbox
+        pkief.material-icon-theme
         usernamehw.errorlens
 
         # Control Scheme
@@ -65,9 +65,9 @@
         };
 
         workbench = {
-          colorTheme = "Catppuccin Mocha";
+          colorTheme = "Gruvbox Dark Hard";
           sideBar.location = "right";
-          iconTheme = "catppuccin-mocha";
+          iconTheme = "material-icon-theme";
         };
 
         editor = {

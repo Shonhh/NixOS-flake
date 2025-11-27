@@ -31,8 +31,6 @@
     ags.url = "github:Aylur/ags";
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
-
-    catppuccin.url = "github:catppuccin/nix";
   };
 
   outputs =
@@ -77,7 +75,6 @@
             inputs.home-manager.nixosModules.default
             inputs.stylix.nixosModules.stylix
             inputs.spicetify-nix.nixosModules.spicetify
-            inputs.catppuccin.nixosModules.catppuccin
 
             {
               nixpkgs.overlays = [

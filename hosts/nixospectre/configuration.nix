@@ -136,7 +136,6 @@
     users = {
       "shonh".imports = [
         ./home.nix
-        inputs.catppuccin.homeModules.catppuccin
       ];
     };
   };
