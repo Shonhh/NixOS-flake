@@ -2,7 +2,7 @@
 {
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml";
     image = ../../home-modules/hypr/wallpaper2.png;
     polarity = "dark";
 
@@ -29,12 +29,7 @@
     targets = {
       spicetify.enable = false;
       grub.enable = false;
-    };
-
-    cursor = {
-      package = pkgs.phinger-cursors;
-      name = "phinger-cursors";
-      size = 24;
+      plymouth.enable = false;
     };
   };
 }

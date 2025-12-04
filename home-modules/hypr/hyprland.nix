@@ -50,14 +50,13 @@
 
       # Environment
       env = [
-        "XCURSOR_SIZE,23"
-        "HYPRCURSOR_SIZE,23"
+        "XCURSOR_SIZE,24"
+        "HYPRCURSOR_SIZE,24"
 
-        "XCURSOR_THEME,catppuccin-mocha-dark-cursors"
-        "HYPRCURSOR_THEME,catppuccin-mocha-dark-cursors"
+        "XCURSOR_THEME,phinger-cursors-light"
+        "HYPRCURSOR_THEME,phinger-cursors-light"
+
         "WLR_NO_HARDWARE_CURSORS,1"
-        "LIBVA_DRIVER_NAME,nvidia"
-        "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       ];
 
       # General
@@ -185,9 +184,11 @@
         emulate_discrete_scroll = 0;
 
         touchpad = {
+          disable_while_typing = false;
           natural_scroll = true;
           scroll_factor = 0.15;
           clickfinger_behavior = true;
+          drag_3fg = 1;
         };
       };
 

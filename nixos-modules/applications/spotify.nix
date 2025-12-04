@@ -9,7 +9,7 @@
       # ... add more later
     ];
 
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "mocha";
+    theme = spicePkgs.themes.onepunch;
+    colorScheme = "dark";
   };
 }

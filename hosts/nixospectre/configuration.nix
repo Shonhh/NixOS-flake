@@ -7,6 +7,7 @@
   config,
   pkgs,
   inputs,
+  lib,
   ...
 }:
 
@@ -34,33 +35,61 @@
   # boot.loader.systemd-boot.enable = true;
   # boot.loader.efi.canTouchEfiVariables = true;
 
-  # `GRUB` Bootloader.
-  boot.loader = {
-    systemd-boot.enable = false;
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
+  boot = {
+
+    # `GRUB` Bootloader.
+    loader = {
+      timeout = 1;
+      systemd-boot.enable = false;
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot";
+      };
+      grub = {
+        devices = [ "nodev" ];
+        enable = true;
+        efiSupport = true;
+        useOSProber = true;
+        splashImage = null;
+
+        # Spam f4 to show grub menu
+        timeoutStyle = "hidden";
+
+        extraEntries = ''
+          menuentry "Shutdown" {
+            halt
+          }
+
+          menuentry "Reboot" {
+            reboot
+          }
+        '';
+      };
     };
-    grub = {
-      devices = [ "nodev" ];
+
+    # Use zen kernel
+    kernelPackages = pkgs.linuxPackages_zen;
+
+    # Enable boot animation
+    plymouth = {
       enable = true;
-      efiSupport = true;
-      useOSProber = true;
-
-      extraEntries = ''
-        menuentry "Shutdown" {
-          halt
-        }
-
-        menuentry "Reboot" {
-          reboot
-        }
-      '';
+      theme = "loader_2";
+      themePackages = with pkgs; [
+        adi1090x-plymouth-themes
+      ];
     };
-  };
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+    # Enable "Silent Boot"
+    consoleLogLevel = 3;
+    initrd.verbose = false;
+    kernelParams = [
+        "quiet"
+        "splash"
+        "boot.shell_on_fail"
+        "udev.log_priority=3"
+        "rd.systemd.show_status=auto"
+    ];
+  };
 
   networking.hostName = "Nixon"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -99,9 +128,12 @@
     gvfs.enable = true;
 
     # Configure keymap in X11
-    xserver.xkb = {
-      layout = "us";
-      variant = "";
+    xserver = {
+      videoDrivers = [ "modesetting" ];
+      xkb = {
+        layout = "us";
+        variant = "";
+      };
     };
   };
 
@@ -120,6 +152,9 @@
 
     packages = with pkgs; [
       prismlauncher
+      pipes-rs
+      cmatrix
+      cbonsai
     ];
 
     shell = pkgs.fish;
@@ -148,6 +183,12 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+
+      extraPackages = with pkgs; [
+        intel-media-driver
+        vpl-gpu-rt
+        intel-compute-runtime
+      ];
     };
   };
 
@@ -164,6 +205,10 @@
     unzip
     wineWowPackages.stable
   ];
+
+  environment.sessionVariables = {
+    LIBVA_DRIVER_NAME = "iHD";
+  };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
 

@@ -9,4 +9,4 @@ else
 fi
 
 # Re-apply the wallpaper to force a screen refresh
-hyprctl hyprpaper reload ,"~/nixos/home-modules/hypr/wallpaper.jpg"
+hyprctl hyprpaper reload ,"~/nixos/home-modules/hypr/wallpaper2.png"

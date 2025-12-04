@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
   imports = [
     inputs.nixcord.homeModules.nixcord
@@ -28,7 +28,7 @@
 
         clientTheme = {
           enable = true;
-          color = "1e1e2e";
+          color = config.lib.stylix.colors.base00;
         };
 
         copyFileContents.enable = true;

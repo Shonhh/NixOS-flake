@@ -15,4 +15,11 @@
       package = pkgs.papirus-icon-theme;
     };
   };
+
+  home.pointerCursor = {
+    name = "phinger-cursors-light";
+    package = pkgs.phinger-cursors;
+    size = 24;
+    gtk.enable = true;
+  };
 }
