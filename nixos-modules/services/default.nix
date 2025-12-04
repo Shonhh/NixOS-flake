@@ -1,6 +1,6 @@
 { lib, config, pkgs, ... }: {
   imports = [
-    ./tuigreet.nix
+    ./greetd.nix
     ./stylix.nix
     ./hypr-environment.nix
   ];
