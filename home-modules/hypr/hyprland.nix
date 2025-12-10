@@ -155,7 +155,10 @@
         "special:terminal, on-created-empty:[float; size 960 540] $terminal, persistent:false"
       ];
 
-      layerrule = "blur, logout_dialog";
+      layerrule = [
+        "blur, logout_dialog"
+        "blur, bar-.*"
+      ];
 
       # Layout configuration
       dwindle = {

@@ -204,6 +204,7 @@
     networkmanagerapplet
     unzip
     wineWowPackages.stable
+    vlc
   ];
 
   environment.sessionVariables = {

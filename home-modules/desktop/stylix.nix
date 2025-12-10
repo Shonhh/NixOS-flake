@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   stylix.targets = {
     starship.enable = false;
@@ -12,7 +12,7 @@
 
     iconTheme = {
       name = "Papirus-Dark";
-      package = pkgs.papirus-icon-theme;
+      package = lib.mkDefault pkgs.papirus-icon-theme;
     };
   };
 

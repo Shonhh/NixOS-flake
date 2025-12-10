@@ -49,6 +49,9 @@
         floating = false;
         outer_spacing = "8px";
 
+        opacity = 80;
+
+
         menus = {
           monochrome = false;
           popover.scaling = 55;
@@ -61,6 +64,7 @@
           y_margins = "0.4em";
 
           dashboard.enableBorder = false;
+          background_opacity = 0;
         };
       };
     };

@@ -22,9 +22,9 @@
         betterSettings.enable = true;
         betterUploadButton.enable = true;
         biggerStreamPreview.enable = true;
-        blurNSFW.enable = true;
+        blurNsfw.enable = true;
         callTimer.enable = true;
-        clearURLs.enable = true;
+        clearUrLs.enable = true;
 
         clientTheme = {
           enable = true;
@@ -32,8 +32,8 @@
         };
 
         copyFileContents.enable = true;
-        copyUserURLs.enable = true;
-        customRPC.enable = true;
+        copyUserUrLs.enable = true;
+        customRpc.enable = true;
         dearrow.enable = true;
         dontRoundMyTimestamps.enable = true;
         fakeNitro.enable = true;
@@ -66,7 +66,6 @@
 
         showMeYourName = {
           enable = true;
-          mode = "nick-user";
         };
 
         showTimeoutDuration.enable = true;
