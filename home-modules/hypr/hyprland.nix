@@ -130,7 +130,7 @@
         ];
       };
 
-      # Window rules
+      # Window rules (no longer work? fix later)
       windowrulev2 = [
         "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
         "opacity 0.80 0.80,class:^(discord)$"
@@ -155,10 +155,7 @@
         "special:terminal, on-created-empty:[float; size 960 540] $terminal, persistent:false"
       ];
 
-      layerrule = [
-        "blur, logout_dialog"
-        "blur, bar-.*"
-      ];
+      layerrule = [];
 
       # Layout configuration
       dwindle = {

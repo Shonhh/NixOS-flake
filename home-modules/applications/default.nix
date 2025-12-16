@@ -6,5 +6,6 @@
     ./ghostty.nix
     ./discord.nix
     ./vscode.nix
+    ./zed-editor.nix
   ];
 }
