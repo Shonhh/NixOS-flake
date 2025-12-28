@@ -87,11 +87,16 @@
 
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          cargo rustc rustfmt clippy rust-analyzer
+          cargo
+          rustc
+          rustfmt
+          clippy
+          rust-analyzer
         ];
 
         packages = with pkgs; [
           jdk
+          nil
           # ... add more later.
         ];
 

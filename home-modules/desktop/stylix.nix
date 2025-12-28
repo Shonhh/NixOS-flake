@@ -5,6 +5,7 @@
     nixcord.enable = false;
     vscode.enable = false;
     hyprlock.enable = false;
+    zed.enable = false;
   };
 
   gtk = {

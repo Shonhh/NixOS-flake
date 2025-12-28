@@ -36,7 +36,7 @@
       "$terminal" = "ghostty";
       "$browser" = "vivaldi";
       "$file_manager" = "thunar";
-      "$code_editor" = "code";
+      "$code_editor" = "zeditor";
       "$mail" = "thunderbird";
 
       # Autostart
@@ -131,23 +131,26 @@
       };
 
       # Window rules (no longer work? fix later)
-      windowrulev2 = [
-        "opacity 0.80 0.80,class:^(com.mitchellh.$terminal)$"
-        "opacity 0.80 0.80,class:^(discord)$"
-        "opacity 0.80 0.80,class:^(Spotify)$"
-        "opacity 0.75 0.75,class:^(thunar)$"
-        "opacity 0.92 0.92,class:^(steam)$"
-        "opacity 0.92 0.92,class:^(obsidian)$"
-        "opacity 0.92 0.92,class:^([Cc]ode)$"
-        # ... add more later
+      windowrule = [
+        # Opacity Rules
+        "match:class ^(com.mitchellh.$terminal)$, opacity 0.80 0.80"
+        "match:class ^(discord)$, opacity 0.80 0.80"
+        "match:class ^(Spotify)$, opacity 0.80 0.80"
+        "match:class ^(thunar)$, opacity 0.75 0.75"
+        "match:class ^(steam)$, opacity 0.92 0.92"
+        "match:class ^(obsidian)$, opacity 0.92 0.92"
+        "match:class ^([Cc]ode)$, opacity 0.92 0.92"
+        "match:class ^(dev.zed.Zed)$, opacity 0.92 0.92"
 
+        # Steam gaming (performance) rules
+        "match:class ^steam_app_\\d+$, monitor 1"
+        "match:class ^steam_app_\\d+$, workspace 10"
+      ];
+
+      windowrulev2 = [
         # Hyprland recommended rules
         "suppressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-
-        # Steam gaming (performance) rules
-        "monitor 1, class:^steam_app_\\d+$"
-        "workspace 10,class:^steam_app_\\d+$"
       ];
 
       workspace = [
@@ -155,7 +158,14 @@
         "special:terminal, on-created-empty:[float; size 960 540] $terminal, persistent:false"
       ];
 
-      layerrule = [];
+      gesture = [
+        "3, horizontal, workspace"
+      ];
+
+      layerrule = [
+        # "blur, hyprpanel"
+        # "ignorealpha 0.5, hyprpanel"
+      ];
 
       # Layout configuration
       dwindle = {
