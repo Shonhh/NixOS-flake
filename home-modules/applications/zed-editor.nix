@@ -74,5 +74,33 @@
       ui_font_family = "Lato";
       ui_font_size = 16.0;
     };
+
+    userTasks = [
+      {
+        label = "Rust: Run";
+        command = "cargo run";
+        cwd = "$ZED_WORKTREE_ROOT";
+        use_new_terminal = false;
+        allow_concurrent_runs = false;
+        reveal = "always";
+      }
+      {
+        label = "C: Run";
+        command = "gcc $ZED_FILE -o main && ./main";
+        use_new_terminal = false;
+        allow_concurrent_runs = false;
+        reveal = "always";
+      }
+    ];
+
+    userKeymaps = [
+      {
+        context = "Workspace";
+        bindings = {
+          "ctrl-n" = "task::Spawn";
+          "ctrl-alt-n" = "task::Rerun";
+        };
+      }
+    ];
   };
 }

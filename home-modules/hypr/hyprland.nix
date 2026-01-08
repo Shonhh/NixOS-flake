@@ -140,6 +140,7 @@
         "match:class ^(obsidian)$, opacity 0.92 0.92"
         "match:class ^([Cc]ode)$, opacity 0.92 0.92"
         "match:class ^(dev.zed.Zed)$, opacity 0.92 0.92"
+        "match:title ^(hyprpanel-settings)$, opacity 0.99 0.99"
       ];
 
       windowrulev2 = [
@@ -160,6 +161,33 @@
       layerrule = [
         "match:namespace bar-0, blur on"
         "match:namespace bar-0, ignore_alpha 0.5"
+
+        "match:namespace bar-1, blur on"
+        "match:namespace bar-1, ignore_alpha 0.5"
+
+        "match:namespace dashboardmenu, blur on"
+        "match:namespace dashboardmenu, ignore_alpha 0.5"
+
+        "match:namespace mediamenu, blur on"
+        "match:namespace mediamenu, ignore_alpha 0.5"
+
+        "match:namespace audiomenu, blur on"
+        "match:namespace audiomenu, ignore_alpha 0.5"
+
+        "match:namespace networkmenu, blur on"
+        "match:namespace networkmenu, ignore_alpha 0.5"
+
+        "match:namespace bluetoothmenu, blur on"
+        "match:namespace bluetoothmenu, ignore_alpha 0.5"
+
+        "match:namespace energymenu, blur on"
+        "match:namespace energymenu, ignore_alpha 0.5"
+
+        "match:namespace calendarmenu, blur on"
+        "match:namespace calendarmenu, ignore_alpha 0.5"
+
+        "match:namespace notificationsmenu, blur on"
+        "match:namespace notificationsmenu, ignore_alpha 0.5"
       ];
 
       # Layout configuration

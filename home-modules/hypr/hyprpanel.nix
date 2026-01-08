@@ -51,10 +51,10 @@
 
         opacity = 80;
 
-
         menus = {
           monochrome = false;
           popover.scaling = 55;
+          opacity = 70;
         };
 
         buttons = {

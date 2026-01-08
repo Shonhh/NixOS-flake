@@ -92,23 +92,27 @@
           rustfmt
           clippy
           rust-analyzer
+          clang-tools
         ];
 
         packages = with pkgs; [
           jdk
           nil
-          libgcc
           # ... add more later.
         ];
 
         shellHook = ''
           echo "Entering multi-language development environment!"
+          # Ensure clangd knows where to find the headers provided by nix
         '';
 
         nativeBuildInputs = [ pkgs.pkg-config ];
 
-        env.RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
-        JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
+        env = {
+          RUST_SRC_PATH = "${pkgs.rust.packages.stable.rustPlatform.rustLibSrc}";
+          JAVA_HOME = "${pkgs.jdk}/lib/openjdk";
+          CPATH = "${pkgs.glibc.dev}/include";
+        };
       };
     };
 }
