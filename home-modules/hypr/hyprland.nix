@@ -137,14 +137,9 @@
         "match:class ^(discord)$, opacity 0.80 0.80"
         "match:class ^(Spotify)$, opacity 0.80 0.80"
         "match:class ^(thunar)$, opacity 0.75 0.75"
-        "match:class ^(steam)$, opacity 0.92 0.92"
         "match:class ^(obsidian)$, opacity 0.92 0.92"
         "match:class ^([Cc]ode)$, opacity 0.92 0.92"
         "match:class ^(dev.zed.Zed)$, opacity 0.92 0.92"
-
-        # Steam gaming (performance) rules
-        "match:class ^steam_app_\\d+$, monitor 1"
-        "match:class ^steam_app_\\d+$, workspace 10"
       ];
 
       windowrulev2 = [
@@ -163,8 +158,8 @@
       ];
 
       layerrule = [
-        # "blur, hyprpanel"
-        # "ignorealpha 0.5, hyprpanel"
+        "match:namespace bar-0, blur on"
+        "match:namespace bar-0, ignore_alpha 0.5"
       ];
 
       # Layout configuration
@@ -197,8 +192,6 @@
           disable_while_typing = false;
           natural_scroll = true;
           scroll_factor = 0.15;
-          clickfinger_behavior = true;
-          drag_3fg = 1;
         };
       };
 
@@ -217,7 +210,7 @@
         "$mod, F, exec, $browser"
         "$mod, D, exec, discord"
         "$mod, S, exec, spotify"
-        "$mod, G, exec, steam"
+        "$mod, G, exec, gamescope -W 1920 -H 1080 -r 200 --xwayland-count 2 --hdr-enabled --hdr-itm-enabled --fullscreen --force-grab-cursor -- steam -noverifyfiles"
         "$mod, E, exec, $file_manager"
         "$mod, C, exec, nix develop ~/nixos/ --command $code_editor"
         "$mod, N, exec, obsidian"

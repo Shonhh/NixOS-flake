@@ -97,6 +97,7 @@
         packages = with pkgs; [
           jdk
           nil
+          libgcc
           # ... add more later.
         ];
 

@@ -8,5 +8,5 @@ else
     hyprctl keyword input:touchdevice:transform 0
 fi
 
-# Re-apply the wallpaper to force a screen refresh
-hyprctl hyprpaper reload ,"~/nixos/home-modules/hypr/wallpaper2.png"
+# Re-start hyprpaper to force a screen refresh, fixes transparency issues
+systemctl --user restart hyprpaper.service
