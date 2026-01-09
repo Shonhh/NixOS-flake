@@ -159,6 +159,8 @@
       ];
 
       layerrule = [
+
+        # Hyprpanel Start >
         "match:namespace bar-0, blur on"
         "match:namespace bar-0, ignore_alpha 0.5"
 
@@ -188,6 +190,10 @@
 
         "match:namespace notificationsmenu, blur on"
         "match:namespace notificationsmenu, ignore_alpha 0.5"
+
+        "match:namespace verification, blur on"
+        "match:namespace verification, ignore_alpha 0.5"
+        # < Hyprpanel End
       ];
 
       # Layout configuration

@@ -11,6 +11,7 @@
       "Nix"
       "Colored Zed Icons Theme"
       "Gruvbox Baby"
+      "Make"
     ];
 
     userSettings = {
@@ -85,10 +86,17 @@
         reveal = "always";
       }
       {
-        label = "C: Run";
-        command = "gcc $ZED_FILE -o main && ./main";
+        label = "C: Run All";
+        command = "gcc *.c -o main && ./main";
         use_new_terminal = false;
         allow_concurrent_runs = false;
+        reveal = "always";
+      }
+      {
+        label = "C: Make Run";
+        command = "make run";
+        cwd = "$ZED_WORKTREE_ROOT";
+        use_new_terminal = false;
         reveal = "always";
       }
     ];

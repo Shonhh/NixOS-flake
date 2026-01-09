@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   imports = [
     ./spotify.nix
     ./steam.nix
@@ -7,6 +8,7 @@
     ./obsidian.nix
     ./dolphin-emu.nix
     ./virt-manager.nix
+    ./obs-studio.nix
     # ... add more later
   ];
 }
