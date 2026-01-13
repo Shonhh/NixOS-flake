@@ -9,6 +9,7 @@
     ./dolphin-emu.nix
     ./virt-manager.nix
     ./obs-studio.nix
+    ./vscode.nix
     # ... add more later
   ];
 }

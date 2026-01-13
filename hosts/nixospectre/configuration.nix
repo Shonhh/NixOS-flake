@@ -37,6 +37,13 @@
 
   boot = {
 
+    # Camera Stuff
+    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
+    kernelModules = [ "v4l2loopback" ];
+    extraModprobeConfig = ''
+      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    '';
+
     # `GRUB` Bootloader.
     loader = {
       timeout = 1;
@@ -51,6 +58,7 @@
         efiSupport = true;
         useOSProber = true;
         splashImage = null;
+        configurationLimit = 10;
 
         # Spam f4 to show grub menu
         timeoutStyle = "hidden";
@@ -67,8 +75,11 @@
       };
     };
 
-    # Use zen kernel
+    # Use LTS kernel for camera?
     kernelPackages = pkgs.linuxPackages_zen;
+    kernel.sysctl = {
+      "vm.max_map_count" = 2147483642;
+    };
 
     # Enable boot animation
     plymouth = {
@@ -88,6 +99,10 @@
       "boot.shell_on_fail"
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
+
+      "i915.enable_psr=0" # Disable Panel Self Refresh (The #1 cause of freezes)
+      "i915.enable_dc=0" # Disable Display Power Saving (prevents deep sleep hangs)
+      "intel_idle.max_cstate=1" # Prevent CPU from sleeping too deeply while gaming
     ];
   };
 
@@ -121,7 +136,17 @@
 
   services = {
     # Enable battery management
-    tlp.enable = true;
+    tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_BOOST_ON_AC = 1;
+      };
+    };
     # Enable CUPS for printing
     printing.enable = true;
     # Enable auto-mounting of removable media
@@ -134,6 +159,17 @@
         layout = "us";
         variant = "";
       };
+    };
+
+    usbmuxd.enable = true;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+
+      wireplumber.enable = true;
     };
   };
 
@@ -156,6 +192,7 @@
       cmatrix
       cbonsai
       gale
+      zoom-us
     ];
 
     shell = pkgs.fish;
@@ -191,6 +228,13 @@
         intel-compute-runtime
       ];
     };
+
+    # ipu6 = {
+    #   enable = true;
+    #   platform = "ipu6";
+    # };
+
+    enableRedistributableFirmware = true;
   };
 
   # List packages installed in system profile. To search, run:
@@ -206,6 +250,9 @@
     unzip
     wineWowPackages.stable
     vlc
+    v4l-utils
+    libcamera
+    guvcview
   ];
 
   environment.sessionVariables = {

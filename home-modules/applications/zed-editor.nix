@@ -20,6 +20,17 @@
         metrics = false;
       };
 
+      lsp = {
+        clangd = {
+          binary = {
+            arguments = [
+              "-j=2"
+              "--pch-strorage=memory"
+            ];
+          };
+        };
+      };
+
       agent = {
         dock = "left";
       };

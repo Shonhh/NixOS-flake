@@ -141,6 +141,9 @@
         "match:class ^([Cc]ode)$, opacity 0.92 0.92"
         "match:class ^(dev.zed.Zed)$, opacity 0.92 0.92"
         "match:title ^(hyprpanel-settings)$, opacity 0.99 0.99"
+
+        # Try to force tModLoader not to tear
+        "match:class ^(tModLoader)$, immediate on"
       ];
 
       windowrulev2 = [
@@ -159,7 +162,6 @@
       ];
 
       layerrule = [
-
         # Hyprpanel Start >
         "match:namespace bar-0, blur on"
         "match:namespace bar-0, ignore_alpha 0.5"
@@ -244,7 +246,8 @@
         "$mod, F, exec, $browser"
         "$mod, D, exec, discord"
         "$mod, S, exec, spotify"
-        "$mod, G, exec, gamescope -W 1920 -H 1080 -r 200 --xwayland-count 2 --hdr-enabled --hdr-itm-enabled --fullscreen --force-grab-cursor -- steam -noverifyfiles"
+        "$mod, G, exec, steam"
+        "$mod+Shift, G, exec, gamescope -w 1920 -h 1080 -r 200 -e -f --xwayland-count 2 --hdr-enabled --hdr-itm-enabled -- steam -noverifyfiles -gamepadui"
         "$mod, E, exec, $file_manager"
         "$mod, C, exec, nix develop ~/nixos/ --command $code_editor"
         "$mod, N, exec, obsidian"

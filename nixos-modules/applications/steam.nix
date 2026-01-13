@@ -11,7 +11,10 @@
       capSysNice = true;
     };
 
-    gamemode.enable = true;
+    gamemode = {
+      enable = true;
+      enableRenice = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [

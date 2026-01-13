@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 
 {
   users.users.shonh.packages = with pkgs; [
@@ -9,7 +9,6 @@
   services = {
     upower.enable = true;
   };
-
 
   # Enable flatpak
   services.flatpak.enable = true;
@@ -31,7 +30,7 @@
 
     config = {
       common = {
-        default = [ "hyprland" ];
+        default = [ "*" ];
       };
     };
   };

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -8,8 +9,15 @@
     '';
 
     plugins = [
-      { name = "grc"; src = pkgs.fishPlugins.grc.src; }
+      {
+        name = "grc";
+        src = pkgs.fishPlugins.grc.src;
+      }
     ];
+
+    shellAliases = {
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos/#nixospectre";
+    };
   };
 
   programs.bash = {
