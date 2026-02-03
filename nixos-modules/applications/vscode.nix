@@ -13,6 +13,7 @@
       ms-vscode-remote.remote-wsl
       ms-vscode-remote.remote-containers
       ms-vscode.makefile-tools
+      vscodevim.vim
     ];
   };
 }

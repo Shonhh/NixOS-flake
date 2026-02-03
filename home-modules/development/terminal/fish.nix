@@ -4,7 +4,12 @@
     enable = true;
     interactiveShellInit = ''
       function fish_greeting
-        fastfetch
+      end
+    '';
+
+    shellInit = ''
+      if test -f ~/.config/secrets/gemini.fish
+        source ~/.config/secrets/gemini.fish
       end
     '';
 
@@ -18,6 +23,7 @@
     shellAliases = {
       nrs = "sudo nixos-rebuild switch --flake ~/nixos/#nixospectre";
     };
+
   };
 
   programs.bash = {

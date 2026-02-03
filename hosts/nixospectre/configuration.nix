@@ -20,6 +20,10 @@
     ../../nixos-modules/default.nix
   ];
 
+  # What desktop am I using
+  my.desktop.kde.enable = true;
+  my.desktop.hyprland.enable = false;
+
   nix.settings = {
     experimental-features = [
       "nix-command"
@@ -36,14 +40,6 @@
   # boot.loader.efi.canTouchEfiVariables = true;
 
   boot = {
-
-    # Camera Stuff
-    extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
-    kernelModules = [ "v4l2loopback" ];
-    extraModprobeConfig = ''
-      options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
-    '';
-
     # `GRUB` Bootloader.
     loader = {
       timeout = 1;
@@ -75,11 +71,19 @@
       };
     };
 
-    # Use LTS kernel for camera?
+    # Use zen kernel for performance
     kernelPackages = pkgs.linuxPackages_zen;
     kernel.sysctl = {
       "vm.max_map_count" = 2147483642;
     };
+
+    blacklistedKernelModules = [
+      "v4l2loopback"
+      "vivid"
+      "intel-ipu6"
+      "intel-ipu6-isys"
+      "intel-ipu6-psys"
+    ];
 
     # Enable boot animation
     plymouth = {
@@ -168,8 +172,6 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
-
-      wireplumber.enable = true;
     };
   };
 
@@ -206,10 +208,12 @@
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "shonh".imports = [
+    users."shonh" = {
+      imports = [
         ./home.nix
       ];
+
+      my.modules.hyprland.enable = config.my.desktop.hyprland.enable;
     };
   };
 
@@ -244,15 +248,13 @@
     wget
     git
     brightnessctl
-    nixfmt-rfc-style
+    nixfmt
     nixd
     networkmanagerapplet
     unzip
     wineWowPackages.stable
     vlc
-    v4l-utils
-    libcamera
-    guvcview
+    kdePackages.filelight
   ];
 
   environment.sessionVariables = {

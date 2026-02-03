@@ -25,7 +25,8 @@
           binary = {
             arguments = [
               "-j=2"
-              "--pch-strorage=memory"
+              "--pch-storage=memory"
+              "--query-driver=/usr/bin/gcc"
             ];
           };
         };
@@ -62,8 +63,8 @@
         enabled = true;
       };
 
-      use_system_prompts = false;
-      use_system_path_prompts = false;
+      use_system_prompts = true;
+      use_system_path_prompts = true;
 
       indent_guides = {
         background_coloring = "disabled";
@@ -80,11 +81,11 @@
       icon_theme = "Colored Zed Icons Theme Dark";
 
       buffer_font_family = "Fira Code Nerd Font";
-      buffer_font_size = 16.0;
+      buffer_font_size = 15.0;
       theme = "Gruvbox Baby";
 
       ui_font_family = "Lato";
-      ui_font_size = 16.0;
+      ui_font_size = 15.0;
     };
 
     userTasks = [

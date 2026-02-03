@@ -142,7 +142,6 @@
       powerManagement.finegrained = false;
       open = false;
       nvidiaSettings = true;
-      
 
       package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
@@ -155,7 +154,7 @@
     wget
     git
     brightnessctl
-    nixfmt-rfc-style
+    nixfmt
     nixd
     networkmanagerapplet
   ];

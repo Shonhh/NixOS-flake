@@ -98,6 +98,7 @@
         packages = with pkgs; [
           jdk
           nil
+          gdb
           # ... add more later.
         ];
 

@@ -5,11 +5,14 @@
   inputs,
   ...
 }:
-
+let
+  cfg = config.my.hyprland;
+in
 {
+
   options.eDP-1.enable = lib.mkEnableOption "scale x2 on eDP-1";
 
-  config = {
+  config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
@@ -55,8 +58,6 @@
 
         "XCURSOR_THEME,phinger-cursors-light"
         "HYPRCURSOR_THEME,phinger-cursors-light"
-
-        "WLR_NO_HARDWARE_CURSORS,1"
       ];
 
       # General
@@ -146,12 +147,6 @@
         "match:class ^(tModLoader)$, immediate on"
       ];
 
-      windowrulev2 = [
-        # Hyprland recommended rules
-        "suppressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-      ];
-
       workspace = [
         "10, border:false, rounding:false"
         "special:terminal, on-created-empty:[float; size 960 540] $terminal, persistent:false"
@@ -231,6 +226,10 @@
         };
       };
 
+      cursor = {
+        no_hardware_cursors = 1;
+      };
+
       device = [
         {
           # ... add later
@@ -247,7 +246,7 @@
         "$mod, D, exec, discord"
         "$mod, S, exec, spotify"
         "$mod, G, exec, steam"
-        "$mod+Shift, G, exec, gamescope -w 1920 -h 1080 -r 200 -e -f --xwayland-count 2 --hdr-enabled --hdr-itm-enabled -- steam -noverifyfiles -gamepadui"
+        "$mod+Shift, G, exec, gamescope -w 1920 -h 1080 -W 1920 -H 1080 -r 200 -e -f --xwayland-count 2 --hdr-enabled --hdr-itm-enabled --force-grab-cursor -- steam -noverifyfiles -gamepadui"
         "$mod, E, exec, $file_manager"
         "$mod, C, exec, nix develop ~/nixos/ --command $code_editor"
         "$mod, N, exec, obsidian"
