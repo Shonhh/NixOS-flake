@@ -6,11 +6,10 @@
 
   programs.nixcord = {
     enable = true;
-
     quickCss = builtins.readFile ./discord.css;
 
     config = {
-      useQuickCss = true;
+      disableMinSize = true;
 
       plugins = {
         anonymiseFileNames.enable = true;
@@ -25,12 +24,10 @@
         BlurNSFW.enable = true;
         callTimer.enable = true;
         ClearURLs.enable = true;
-
         clientTheme = {
           enable = true;
           color = config.lib.stylix.colors.base00;
         };
-
         copyFileContents.enable = true;
         CopyUserURLs.enable = true;
         CustomRPC.enable = true;

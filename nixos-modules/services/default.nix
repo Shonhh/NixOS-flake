@@ -1,7 +1,13 @@
-{ lib, config, pkgs, ... }: {
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
+{
   imports = [
-    ./greetd.nix
     ./stylix.nix
+    ./greetd.nix
     ./hypr-environment.nix
   ];
 }

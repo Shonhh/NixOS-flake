@@ -1,5 +1,12 @@
-{ pkgs, inputs, lib, config, ... }: {
-  imports = [ 
-    ./stylix.nix 
+{
+  pkgs,
+  inputs,
+  lib,
+  config,
+  ...
+}:
+{
+  imports = [
+    ./stylix.nix
   ];
 }

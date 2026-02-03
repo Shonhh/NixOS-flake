@@ -21,8 +21,8 @@
   ];
 
   # What desktop am I using
-  my.desktop.kde.enable = true;
-  my.desktop.hyprland.enable = false;
+  my.desktop.kde.enable = false;
+  my.desktop.hyprland.enable = true;
 
   nix.settings = {
     experimental-features = [
@@ -208,13 +208,20 @@
   home-manager = {
     useGlobalPkgs = true;
     extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
     users."shonh" = {
       imports = [
         ./home.nix
       ];
-
-      my.modules.hyprland.enable = config.my.desktop.hyprland.enable;
     };
+  };
+
+  systemd.services.flatpak-repo = {
+    wantedBy = [ "multi-user.target" ];
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
   # Allow unfree packages
@@ -259,6 +266,7 @@
 
   environment.sessionVariables = {
     LIBVA_DRIVER_NAME = "iHD";
+    NIXOS_OZONE_WL = "1";
   };
 
   nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];

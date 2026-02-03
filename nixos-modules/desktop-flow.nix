@@ -22,6 +22,15 @@ in
     # If KDE is on, ensure SDDM uses Wayland
     services.displayManager.sddm.wayland.enable = lib.mkIf kde.enable true;
 
+    environment.plasma6.excludePackages =
+      with pkgs.kdePackages;
+      lib.mkIf kde.enable [
+        konsole
+        # You can add others here too, e.g.:
+        # kate
+        # elisa
+      ];
+
     # --- HYPRLAND SYSTEM LOGIC ---
     # Only enable the system-level Hyprland package if the toggle is on
     programs.hyprland.enable = lib.mkIf hypr.enable true;
