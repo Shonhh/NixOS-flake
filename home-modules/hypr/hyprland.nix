@@ -44,8 +44,6 @@ in
 
       # Autostart
       exec-once = [
-        "$terminal"
-
         # "hypridle"
         "systemctl --user start hyprpolkitagent"
         # ... add more later
@@ -136,7 +134,7 @@ in
         # Opacity Rules
         "match:class ^(com.mitchellh.$terminal)$, opacity 0.80 0.80"
         "match:class ^(discord)$, opacity 0.80 0.80"
-        "match:class ^(Spotify)$, opacity 0.80 0.80"
+        "match:class ^([sS]potify)$, opacity 0.80 0.80"
         "match:class ^(thunar)$, opacity 0.75 0.75"
         "match:class ^(obsidian)$, opacity 0.92 0.92"
         "match:class ^([Cc]ode)$, opacity 0.92 0.92"

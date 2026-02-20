@@ -3,14 +3,8 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      function fish_greeting
-      end
-    '';
-
-    shellInit = ''
-      if test -f ~/.config/secrets/gemini.fish
-        source ~/.config/secrets/gemini.fish
-      end
+      set -g fish_greeting
+      fastfetch
     '';
 
     plugins = [
