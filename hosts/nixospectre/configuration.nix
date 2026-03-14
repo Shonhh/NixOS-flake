@@ -259,7 +259,7 @@
     nixd
     networkmanagerapplet
     unzip
-    wineWowPackages.stable
+    wineWow64Packages.stable
     vlc
     kdePackages.filelight
   ];
